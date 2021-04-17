@@ -35,32 +35,23 @@ function generatePassword() {
         totalCharacters = totalCharacters.concat(number)
       };
 
+      let sCharacters = confirm('Do you want special characters in your password?');
+      if(sCharacters) {
+        totalCharacters = totalCharacters.concat(specialCharacters)
+      };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      // Write password to the #password input
+      if (totalCharacters === undefined) {
+        return alert('Please choose at least one password criteria. Press Generate Password to try again.');
+      }
+        
+      while (passwordLength >= finalArray.length) {
+        finalArray.push(totalCharacters[Math.floor(Math.random()*totalCharacters.length)]);
+      }
+      yourPassword = finalArray.join(separator);
+      return yourPassword
+    }
+}
+     // Write password to the #password input
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");

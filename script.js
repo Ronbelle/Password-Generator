@@ -12,3 +12,5 @@ function generatePassword() {
   let yourPassword = [];
   let finalArray = [];
   let separator = "";
+
+  let passwordLength = prompt('How many characters do you want your passwod to be? Enter a number 8-128');

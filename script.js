@@ -13,4 +13,60 @@ function generatePassword() {
   let finalArray = [];
   let separator = "";
 
-  let passwordLength = prompt('How many characters do you want your passwod to be? Enter a number 8-128');
+  let passwordLength = prompt('How many characters do you want your password to be? Enter a number 8-128');
+
+  if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+    alert('The number you chose is not valid. Try again!')
+  } else {
+      let totalCharacters;
+
+      let lowerCase = confirm("Do you want lowercase letters in your password?");
+      if(lowerCase) {
+        totalCharacters = alpha
+      };
+
+      let upperCase = confirm("Do you want uppercase letters in your password?");
+      if(upperCase) {
+        totalCharacters = totalCharacters.concat(alphaUpcase)
+      };
+
+      let numbers = confirm('Do you want numbers in your password?');
+      if(numbers) {
+        totalCharacters = totalCharacters.concat(number)
+      };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // Write password to the #password input
+function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+  
+    passwordText.value = password;
+  
+  }
+  // Add event listener to generate button
+  generateBtn.addEventListener("click", writePassword);
